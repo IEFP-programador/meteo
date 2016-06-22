@@ -5,10 +5,12 @@
             $(document).ready(function() {
                 $("#bGetMeteo").click(function() {
                     place = $("#place").val();
-                    
-//http://api.wunderground.com/api/d8483e016960a875/conditions/q/Viana_do_Castelo.json
-                    url = "http://api.wunderground.com/api/d8483e016960a875/conditions/q/"+place+".json";
-                    
+
+                    //nota na url inserir a api key do wunderground
+                    // usar esta só para teste : d8483e016960a875
+
+                    url = "http://api.wunderground.com/api/<apikey>/conditions/q/"+place+".json";
+
                     $.ajax(url,{
                         method : "GET",
                         dataType : "json",
@@ -25,7 +27,7 @@
             })
         </script>
     </head>
-    
+
     <body>
         <div id="control">
         <input type="text" id="place" placeholder ="localidade"/>
